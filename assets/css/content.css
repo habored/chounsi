@@ -1,0 +1,155 @@
+.card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  border: solid 3px var(--glow-neon-cyan);
+  margin:  3rem 1rem;
+  box-shadow: 0 0 1.2rem var(--glow-neon-cyan)
+}
+
+h2 {
+  font-family: var(--font-subtitle), sans-serif;
+  color: var(--fire); 
+  text-shadow: var(--glow-alert);
+  margin-bottom: 1.2rem;
+}
+
+/* 
+carte dépliable 
+*/
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  color: var(--glow-neon-cuivre);
+  text-shadow: 0 0 8px var(--glow-neon), 0 0 16px var(--glow-neon2);
+  transition: transform 0.3s ease;
+}
+summary h2 {
+  margin: 0;
+}  
+details[open] summary {
+  margin-bottom: 1.2rem;
+} 
+
+/* 
+enigmes 
+*/
+
+.hidden { display: none; }
+
+#enigmes menu {
+  display: flex;             /* active Flexbox */
+  flex-direction: column;    /* vertical par défaut */
+  gap: 1rem 3.2rem;                 /* espace entre les boutons */
+}
+
+#enigmes menu button.enigme-btn {
+  background: var(--violet);
+  font-size: 1.5rem;
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+  flex-grow: 2;
+}
+
+#enigmes menu button.enigme-btn:hover {
+  background: var(--fire);  
+  color: var(--bg);
+}
+
+/* Option pour Flex horizontal */
+@media(min-width: 600px) {
+  #enigmes menu {
+    flex-direction: row;   /* align horizontal sur grand écran */
+    flex-wrap: wrap;       /* permet de passer à la ligne */
+    margin: auto;
+  }
+}
+
+.enigme input {
+  display: block;
+  margin: 40px auto 20px auto;
+  padding: 8px 12px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  background: var(--surface);
+  color: var(--text);
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+  box-shadow: 0 0 10px var(--muted), 0 0 20px var(--muted);
+}
+
+.enigme input:focus {
+  border-color: var(--muted);
+  box-shadow: var(--glow-neon);
+}
+
+
+.back-btn {
+  background: none;
+  border: 1px solid var(--glow-neon);
+  color: var(--glow-neon);
+  border-radius: 6px;
+  margin-top: 1em;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.feedback {
+  width: 50%;
+  margin: auto;
+  padding: 10px 18px;
+  border-radius: 6px;
+}
+.error { 
+  background: var(--fire);
+  color: var(--surface); 
+}
+.success { background: #2ecc71; color: white; }
+
+/*
+Terminé
+*/
+
+.enigme.done > * {
+  display: none;
+}
+
+.enigme.done > h2,  .enigme.done >  input,   .enigme.done >  button {
+  display: block;
+}
+
+.enigme-btn.done {
+  background-color: var(--accent-green);
+  box-shadow: 0 0 6px var(--accent-green);
+}
+
+
+/*autre*/
+
+em, b, #success h2  { color: var(--accent-green); }
+
+#success h2 { text-shadow: var(--glow-neon); }
+a { color: var(--accent-cyan); text-decoration: none; transition: 0.2s; }
+
+a:hover, b:hover { text-shadow: var(--glow-neon); }
+
+#success #message p {
+  line-height: 1.8rem;
+}

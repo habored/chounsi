@@ -1,0 +1,22 @@
+:root {
+  /* Couleurs */
+  --bg: #0A0F14;
+  --card: #0f2a3a;
+  --accent-cyan: #00F0FF;
+  --accent-green: #00FF88;
+  --fire : #fb7f67;
+  --alert: #FF0033;
+  --text: #D9E6F2;
+  --muted: #285b88;
+  --surface: #07202a;
+  --violet:#291e41;
+
+  /* Typographies */
+  --font-title: 'Orbitron', sans-serif;
+  --font-subtitle: 'Rajdhani', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Ombres et glow */
+  --glow-neon: 0 0 4px var(--accent-cyan), 0 0 8px var(--accent-cyan);
+  --glow-alert: 0 0 8px var(--fire), 0 0 16px var(--alert);
+}

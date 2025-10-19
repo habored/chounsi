@@ -1,0 +1,21 @@
+* { box-sizing: border-box; margin: 0; line-height: 1.2em;}
+
+body {
+  font-family: var(--font-body);
+  background-color: linear-gradient(180deg, var(--bg), #11465b); /* couche 1 : gradient */
+  background: url("../images/bg.jpg") no-repeat 0 0; /* couche 2 : image */
+  background-size: cover; /* adapte l'image au conteneur */
+  color: var(--text);
+  height: 100vh;
+  padding: 0; 
+}
+
+body#success {
+  background: url("../images/bg_success.jpg") no-repeat 0 0; /* couche 2 : image */
+  background-size: cover; 
+}
+main { max-width: 860px; margin: 24px auto; padding: 20px; }
+
+p {padding: .4em; }
+
+.right {float: right;}

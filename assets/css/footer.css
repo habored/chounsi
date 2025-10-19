@@ -1,0 +1,8 @@
+footer {
+  color: var(--muted);
+  text-align: center;
+  padding: 16px;
+  font-size: 0.7rem;
+  position: absolute; 
+  bottom: 0px;
+}

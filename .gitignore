@@ -1,0 +1,13 @@
+# Dossiers générés par Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Gems et bundler
+*.gem
+Gemfile.lock
+vendor/
+
+# Fichiers système
+.DS_Store
