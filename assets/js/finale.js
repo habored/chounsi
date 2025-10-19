@@ -21,11 +21,11 @@ function finalize() {
     document.getElementById("timer").innerHTML="";
     document.getElementById("soustitre").innerHTML="";
     divMessage.innerHTML = "<p><b>Félicitations</b> Agent du numérique, <br>Vous avez démontré <b>les qualités d'une future informaticienne</b> ou d'un futur informaticien !<br>Mais n'oubliez pas : l'objectif est de <b>comprendre la démarche</b>, pas seulement de gagner.</p>";
-    setTimeout(() => _resetMission(), 100000);
+    setTimeout(() => _resetMission(), 7000);
   } else {
     divMessage.innerHTML = "<p>Vous vous êtes égarés, agents ?</p><p>Terminez les énigmes avant de venir ici...</p>";
     setTimeout(() => {
-      window.location.href = "../";
+      window.location.href = `${BASEURL}`;
     }, 3000);
   }
 }
