@@ -1,6 +1,6 @@
 // requirements
-///cookies.js
-///timer.js
+// cookies.js
+// timer.js
 
 
 function nameDisplay(name) {

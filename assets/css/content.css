@@ -153,13 +153,33 @@ Terminé
 
 /*autre*/
 
-em, b, #success h2  { color: var(--accent-green); }
+em, b  { color: var(--accent-green); }
 
-#success h2 { text-shadow: var(--glow-neon); }
 a { color: var(--accent-cyan); text-decoration: none; transition: 0.2s; }
 
 a:hover, b:hover { text-shadow: var(--glow-neon); }
 
 #success #message p {
   line-height: 1.8rem;
+}
+
+#success section {
+  background: linear-gradient(45deg, #8b00d9, #c3ab38, #002eb7);
+  animation: colorWave 10s ease infinite;
+  color: white;
+  text-align: center;
+  padding: 5%;
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+#success h2 { 
+  text-shadow: var(--glow-neon); 
+  color : var(--text); 
+  font-size: 3rem;
 }

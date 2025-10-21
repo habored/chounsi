@@ -1,6 +1,6 @@
 // requirements
 // sound.js
-///cookies.js
+// cookies.js
 
 let timerInterval; 
 
