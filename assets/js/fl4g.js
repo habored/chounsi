@@ -1,4 +1,5 @@
 // requirements
+///cookies.js
 // sound.js
 
 
@@ -11,26 +12,6 @@ const _0xANSWERS = {
   "final": "QUxHT1JJVEhNRTIwMzVN" 
 };
 
-/* ========== utilitaires cookie ========== */
-
-function __getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-  return null;
-}
-
-/**
- * options: { maxAge: number (s), path: string, expires: Date }
- */
-function __setCookie(name, value, options = {}) {
-  let cookie = `${name}=${value}`;
-  if (options.maxAge) cookie += `; max-age=${options.maxAge}`;
-  if (options.path) cookie += `; path=${options.path}`;
-  if (options.expires) cookie += `; expires=${options.expires.toUTCString()}`;
-  document.cookie = cookie;
-}
-
 /* ========== gestion des énigmes dans le cookie ========== */
 
 /**
@@ -39,7 +20,7 @@ function __setCookie(name, value, options = {}) {
  * eg, ["binaire", "python"]
  **/
 function _getEnigmesCookie() {
-  const rawCookie = __getCookie("enigmesDone");
+  const rawCookie = getCookie("enigmesDone");
   if (!rawCookie) return [];
   const enigmesArr = rawCookie.split(",").map(s => s.trim()).filter(Boolean);
   return enigmesArr;
@@ -67,7 +48,7 @@ function __addEnigmeToCookie(nameToAdd, options = {}) {
     // ajout
     enigmesDoneArray.push(nameToAdd); 
     // mise à jour
-    __setCookie("enigmesDone", enigmesDoneArray.join(","), opt);
+    setCookie("enigmesDone", enigmesDoneArray.join(","), opt);
   }
   return enigmesDoneArray;
 }
@@ -82,7 +63,7 @@ function _setEnigmeDone(sectionId) {
   
   const feedback = section.querySelector(".feedback");
   // feeedback
-  feedback.textContent = "Bonne réponse ! Redirection en cours...";
+  feedback.textContent = "Bonne réponse !";
   feedback.className = "feedback success";
 
   const input = section.querySelector("input");
@@ -90,21 +71,18 @@ function _setEnigmeDone(sectionId) {
   input.disabled = true;
   // retirer l'écouteur de l'input
   if (input._handleEnter) {
-    input.removeEventListener("keypress", input._handleEnter);
+    input.removeEventListener("keydown", input._handleEnter);
   }
+  const button = document.querySelector(`.enigme-btn[data-target="${sectionId}"]`);
+  if (button) button.classList.add("done");
   //defer
   setTimeout(() => {
-      // Retour automatique à la liste des énigmes
-      const backBtn = section.querySelector(".back-btn");
-      if (backBtn) backBtn.click();
       // vide le feedback
       feedback.innerHTML = "";
       feedback.className = "feedback";
       // obligé de defer aussi sinon on voit plus le feedback =)
       // Ajoute la classe css done à la section et au bouton
       section.classList.add("done");
-      const button = document.querySelector(`.enigme-btn[data-target="${sectionId}"]`);
-      if (button) button.classList.add("done");
   }, 2500);
   // en cas de domReload
   // Récupère l'input et le feedback associés
@@ -164,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     // Ajout de l'écouteur nommé
-    input.addEventListener("keypress", handleEnter);
+    input.addEventListener("keydown", handleEnter);
   });
 });
 

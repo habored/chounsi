@@ -3,34 +3,55 @@ header {
   padding: 1rem 2rem;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  min-width: fit-content;
-  width: 50vw;
-  
-}
-
-header #bandeau {
+  width: 100vw;
   display: flex;
   justify-content: space-between;
 }
 
-header #bandeau h1 { 
-  font-family: var(--font-title);
+header h1 { 
   font-size: 1.5rem; 
+  font-family: var(--font-title);
   text-shadow: var(--glow-neon); 
 }
 
-header #bandeau #timer { 
+header #timer { 
   margin: 0px 0px 0px 4rem; 
   padding: 5px;
   font-weight: 700; 
   font-family: monospace;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   letter-spacing: 2px;
   border-radius: 6px; 
+  min-width: fit-content;
+  font-family: monospace;
+  text-shadow: var(--glow-neon); 
 }
 
 header #soustitre {
   font-size: .8rem;
-  margin: auto;
+  margin-top: 10px;
   font-style: italic;
+}
+
+header #team {
+  min-width: fit-content;
+  font-size: 2rem; 
+  font-family: monospace;
+  text-shadow: var(--glow-neon); 
+}
+
+@media(max-width: 680px) {
+  header {
+    display: flex;
+    flex-direction: column;   /* align horizontal sur grand écran */
+    flex-wrap: wrap;       /* permet de passer à la ligne */
+    margin: auto;
+  }
+  header > *{   
+    margin: 0!important;
+    padding: 4px!important;
+  }
+  header h1, header #soustitre  {
+    display: none;
+  }
 }

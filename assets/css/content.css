@@ -80,7 +80,11 @@ enigmes
   }
 }
 
-.enigme input {
+/*
+Forms
+*/
+
+input[type="text"] {
   display: block;
   margin: 40px auto 20px auto;
   padding: 8px 12px;
@@ -93,13 +97,13 @@ enigmes
   outline: none;
   transition: 0.3s;
   box-shadow: 0 0 10px var(--muted), 0 0 20px var(--muted);
+  width: calc(100% - 2rem);
 }
 
-.enigme input:focus {
+input[type="text"]:focus {
   border-color: var(--muted);
   box-shadow: var(--glow-neon);
 }
-
 
 .back-btn {
   background: none;
@@ -123,6 +127,12 @@ enigmes
 }
 .success { background: #2ecc71; color: white; }
 
+
+@media(max-width: 680px) {
+  .feedback {
+    min-width: calc(100% - 4rem);
+  }
+}
 /*
 Terminé
 */

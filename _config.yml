@@ -27,6 +27,7 @@ css_files:
   - '/assets/css/content.css'
   - '/assets/css/header.css'
   - '/assets/css/footer.css'
+  - '/assets/css/teamname.css'
 
 # plugins:
 #  - jekyll-feed
