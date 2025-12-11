@@ -14,7 +14,7 @@ body#success {
   background: url("../images/bg_success.jpg") no-repeat 0 0; /* couche 2 : image */
   background-size: cover; 
 }
-main { max-width: 860px; margin: 24px auto; padding: 20px; }
+main { max-width: 860px; margin: 24px auto; }
 
 p {padding: .4em; }
 
