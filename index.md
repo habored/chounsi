@@ -46,7 +46,7 @@ layout: default
 
 <section class="card enigme hidden" id="final">
   <h2>Énigme 4 — Rétablissement<span class="right">***</span></h2>
-  <p>Entrez vos réponses pour débloquer la suite.</p>
+  <p>Pour trouver la dernière clef sur le réseau fantôme Choungi, scanner le bon QR code.</p>
   <input type="text" />
     <p class="feedback muted"></p>
   <button class="back-btn">⬅ Retour</button>
